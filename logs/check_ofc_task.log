@@ -1,0 +1,11 @@
+Mysql Error 2003: Can't connect to MySQL server on '192.168.60.152' (111)
+Traceback (most recent call last):
+  File "check_ofc_task.py", line 10, in <module>
+    total = dao.executeOfcSelectSql(sql)
+  File "../base/dao.py", line 21, in executeOfcSelectSql
+    return self.__ofc.findList(sql)
+  File "../base/db.py", line 40, in findList
+    return self.__find(sql)
+  File "../base/db.py", line 33, in __find
+    self.__cursor.close()
+AttributeError: 'MysqlHelper' object has no attribute '_MysqlHelper__cursor'
