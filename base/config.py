@@ -1,9 +1,16 @@
 #config
 
 configs = {
+	# 'es' : {
+	# 	'ip' : 'http://192.168.60.151:9200/oms/order/',
+	# 	'tms_ip' : 'http://192.168.60.151:9200/tms_search/',
+	# 	'create_status' : {'201', '409'},
+	# 	'update_status' : {'200', '201'},
+	# 	'select_status' : {'200'}
+	# },
 	'es' : {
-		'ip' : 'http://192.168.60.151:9200/oms/order/',
-		'tms_ip' : 'http://192.168.60.151:9200/tms_search/',
+		'ip' : 'http://127.0.0.1:9200/oms/order/',
+		# 'tms_ip' : 'http://192.168.60.151:9200/tms_search/',
 		'create_status' : {'201', '409'},
 		'update_status' : {'200', '201'},
 		'select_status' : {'200'}
