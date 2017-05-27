@@ -32,28 +32,37 @@ for receipt_order in result:
     receiptOrderId =  receipt_order['receipt_order_id']
     print "receipt_order_id : "+str(receiptOrderId)
 
-    money = str(receipt_order['money'])
-    # 取小数点后两位
-    two_decimal_place = Decimal(money[-2:])
+    # money = str(receipt_order['money'])
+    # # 取小数点后两位
+    # two_decimal_place = Decimal(money[-2:])
 
-    if two_decimal_place != 0:
-        inte = Decimal(money[:-3])
-        dec = two_decimal_place/100
-        print "^^^^^^^^^^未抹零，执行update^^^^^^^^^^^"
-        upsql = "update  order_sign_head set money = '%f',floor_money = '%f' WHERE receipt_order_id = '%s'" % (inte,dec,receiptOrderId)
-        print upsql
-        dao.executeOmsSql(upsql)
-        receipt_order['money'] = inte
+    # if two_decimal_place != 0:
+    #     inte = Decimal(money[:-3])
+    #     dec = two_decimal_place/100
+    #     print "^^^^^^^^^^未抹零，执行update^^^^^^^^^^^"
+    #     upsql = "update  order_sign_head set money = '%f',floor_money = '%f' WHERE receipt_order_id = '%s'" % (inte,dec,receiptOrderId)
+    #     print upsql
+    #     dao.executeOmsSql(upsql)
+    #     receipt_order['money'] = inte
+    # 造数据
+    # data = json.dumps(es.getReceiptEsData(receipt_order))
+    # print data
 
-    data = json.dumps(es.getReceiptEsData(receipt_order))
-    print data
 
+    data = {}
+    data["final_money"] = float(receipt_order['money'])
+
+    doc ={}
+    doc ["doc"] = data
+    jsonM = json.dumps(doc)
+    print jsonM
     # 线上用url
-    # url = esConfig['ip'] + "receipt/" + str(receiptOrderId)
-    # 本地测试用url
-    url = esConfig['ip'] + str(receiptOrderId)
+    # url = esConfig['ip'] + "receipt/" + str(receiptOdocrderId)
 
-    res = requests.put(url, data=data, headers=headers)
+    # 本地url
+    url = esConfig['ip'] + str(receiptOrderId)  + "/_update?pretty"
+
+    res = requests.post(url, data=jsonM, headers=headers)
     print res.text
 
     i += 1

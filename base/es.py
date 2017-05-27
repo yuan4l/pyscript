@@ -100,7 +100,6 @@ class Es(object):
         # marketName = self.__dao.getMarketName(order['address_id'])
         # es['market_name'] = marketName.has_key("market_name") and str(marketName['market_name']) or null
         es['money'] = order['money'] and float(order['money']) or null
-        es['final_money'] = order['money'] and float(order['money']) or null
         es['order_id'] = order['order_id'] and str(order['order_id']) or null
         es['pay_type'] = order['pay_type'] and long(order['pay_type']) or null
         es['receipt_at'] = order['receipt_at'] and long(order['receipt_at']) or null
