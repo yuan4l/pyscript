@@ -2,42 +2,42 @@
 
 configs = {
 	# 'es' : {
-	# 	'ip' : 'http://192.168.60.151:9200/oms/order/',
-	# 	'tms_ip' : 'http://192.168.60.151:9200/tms_search/',
+	# 	'ip' : 'http://127.0.0.1:9200/oms/order/',
+	# 	'tms_ip' : 'http://127.0.0.1:9200/tms_search/',
 	# 	'create_status' : {'201', '409'},
 	# 	'update_status' : {'200', '201'},
 	# 	'select_status' : {'200'}
 	# },
 	'es' : {
 		'ip' : 'http://127.0.0.1:9200/oms/order/',
-		# 'tms_ip' : 'http://192.168.60.151:9200/tms_search/',
+		# 'tms_ip' : 'http://127.0.0.1:9200/tms_search/',
 		'create_status' : {'201', '409'},
 		'update_status' : {'200', '201'},
 		'select_status' : {'200'}
 	},
 	# 'oms' : {
-	# 	'host' : '192.168.60.152',
+	# 	'host' : '127.0.0.1',
 	# 	'port' : '5300',
-	# 	'username' : 'order',
-	# 	'password' : 'Lsh@Order2016',
+	# 	'username' : 'user',
+	# 	'password' : 'Order2016',
 	# 	'db' : 'lsh_oms'
 	# },
 	'oms' : {
-		'host' : '192.168.60.48',
+		'host' : '127.0.0.1',
 		'port' : '5201',
-		'username' : 'root',
+		'username' : 'user',
 		'password' : 'root123',
 		'db' : 'lsh_oms'
 	},
 	'ofc' : {
-		'host' : '192.168.60.152',
+		'host' : '127.0.0.1',
 		'port' : '5300',
 		'username' : 'order',
-		'password' : 'Lsh@Order2016',
+		'password' : 'Order2016',
 		'db' : 'lsh_ofc'
 	},
 	'market' : {
-		'host' : '192.168.60.153',
+		'host' : '127.0.0.1',
 		'port' : '3317',
 		'username' : 'yg01',
 		'password' : 'lshygdba',
@@ -46,10 +46,10 @@ configs = {
 	'email' : {
 		"smtp": "smtp.qiye.163.com",
 	        "auth": {
-	            "username": "panxudong@lsh123.com",
-	            "password": "Pxd921206."
+	            "username": "123@123.com",
+	            "password": "921206."
 	        },
-	        #"to": ["fuhao@lsh123.com","panxudong@lsh123.com"]
-		"to": ["aop@lsh123.com"]
+	        #"to": ["123@123.com","123@123.com"]
+		"to": ["123@123.com"]
 	}
 }
